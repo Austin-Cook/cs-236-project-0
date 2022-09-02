@@ -72,8 +72,9 @@ void Library::organizeBooksByGenre() {
             booksByGenre.insert(std::pair<std::string, std::vector<Book*>>(genre, bookList));
         }
         else {
-            std::vector<Book*> bookList = it->second;
-            bookList.push_back(book);
+            std::vector<Book*> bookList = it->second; //Initiates booklist to vector of books previously under author
+            bookList.push_back(book); //Adds the new book to the author
+			it->second = bookList; //I added this line - Resets the vector of books under author to the new list with the new book
         }
     }
 }
