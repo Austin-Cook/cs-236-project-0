@@ -16,6 +16,7 @@ Book::Book(std::string title, std::string author) {
 
 void Book::setGenre(std::string genre) {
     this->genre = genre;
+	genreSet = true;	//This line didn't exist so hasGenre() always returned that the genre wasn't set previously
 }
 
 void Book::setPages(std::string pages) {
